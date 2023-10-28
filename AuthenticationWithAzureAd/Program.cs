@@ -8,6 +8,8 @@ using System.Security.Cryptography.Xml;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//builder.Host() == Program serilog
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"))
         .EnableTokenAcquisitionToCallDownstreamApi()
